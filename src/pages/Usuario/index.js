@@ -3,7 +3,7 @@ import { useHistory } from 'react-router-dom';
 import api from '../../services/api';
 import './style.css';
 
-export default function Registro() {
+export default function Usuario() {
 
   const [perfil, setPerfil] = useState('');
   const [matricula, setMatricula] = useState('');
@@ -13,7 +13,7 @@ export default function Registro() {
 
   const history = useHistory();
 
-  async function handleRegistro(e) {
+  async function handleUsuario(e) {
     e.preventDefault();
 
     const data = {
@@ -32,7 +32,7 @@ export default function Registro() {
           Authorization: 1,
         }}
       );
-      alert(`Id cadastrado: ${response.data.usuario}`);
+      alert(`Usuário cadastrado: ${response.data.usuario}`);
       //localStorage.setItem('userId', response.data.usuario);
       history.push('/');
 
@@ -50,7 +50,7 @@ export default function Registro() {
           <h1>Cadastro de Usuário</h1>
           <p>Faça seu cadastro para ter acesso ao sistema de controle orçamentário da CGGOV.</p>
         </section>
-        <form onSubmit={handleRegistro}>
+        <form onSubmit={handleUsuario}>
           <input
             placeholder="Perfil"
             value = {perfil}

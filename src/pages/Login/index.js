@@ -18,6 +18,7 @@ export default function Login() {
 
     try {
       const response = await api.post('sessions', data);
+      localStorage.setItem('idUser', response.data.id_usuario);
       alert(`Id cadastrado: ${response.data.id_usuario}`);
 
     } catch (error) {
