@@ -3,6 +3,10 @@ import { useHistory } from 'react-router-dom';
 import api from '../../services/api';
 import './style.css';
 
+import Container from '@material-ui/core/Container';
+import TextField from '@material-ui/core/TextField';
+import Button from '@material-ui/core/Button';
+
 export default function UnidadeGestora() {
 
   const [cod_ug, setCodUg] = useState('');
@@ -40,32 +44,62 @@ export default function UnidadeGestora() {
   }
 
   return (
-    <div className="ug-container">
-      <div className="content">
+    <Container component="main" maxWidth="xs">
+      <div className="paper">
         <section>
           <h1>Cadastro de Unidades Gestoras</h1>
-
         </section>
         <form onSubmit={handleUG}>
-          <input
+        <TextField
             placeholder="Código da UG"
             value = {cod_ug}
             onChange = {e => setCodUg(e.target.value)}
+            variant="standard"
+            margin="normal"
+            required
+            fullWidth
+            id="cod_ug"
+            label="Código da UG"
+            name="cod_ug"
+            autoComplete="cod_ug"
+            autoFocus
           />
-          <input
+          <TextField 
             placeholder="UF"
             value = {uf}
             onChange = {e => setUF(e.target.value)}
+            variant="standard"
+            margin="normal"
+            required
+            fullWidth
+            id="uf"
+            label="UF"
+            name="uf"
+            autoComplete="uf"
           />
-          <input
+          <TextField 
             placeholder="Número do Regional"
             value = {num_regional}
             onChange = {e => setNumRegional(e.target.value)}
-          />
-
-          <button type="submit">Cadastrar</button>
+            variant="standard"
+            margin="normal"
+            required
+            fullWidth
+            id="num_regional"
+            label="Número do Regional"
+            name="num_regional"
+            autoComplete="num_regional"
+          /> <br/> <br/>
+          <Button
+            className="enviar"
+            type="submit"
+            fullWidth
+            variant="contained"
+            color="primary"
+          >Cadastrar
+          </Button>
         </form>
       </div>
-    </div>
+    </Container>
   )
 }

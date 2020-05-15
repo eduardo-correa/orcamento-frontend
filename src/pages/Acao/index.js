@@ -3,6 +3,10 @@ import { useHistory } from 'react-router-dom';
 import api from '../../services/api';
 import './style.css';
 
+import Container from '@material-ui/core/Container';
+import TextField from '@material-ui/core/TextField';
+import Button from '@material-ui/core/Button';
+
 export default function Acao() {
 
   const [nome, setnome] = useState('');
@@ -38,27 +42,49 @@ export default function Acao() {
   }
 
   return (
-    <div className="acao-container">
-      <div className="content">
+    <Container component="main" maxWidth="xs">
+      <div className="paper">
         <section>
           <h1>Cadastro de Ações da JT</h1>
-
         </section>
         <form onSubmit={handleAcao}>
-          <input
+        <TextField
             placeholder="Nome da ação"
             value = {nome}
             onChange = {e => setnome(e.target.value)}
+            variant="standard"
+            margin="normal"
+            required
+            fullWidth
+            id="nome"
+            label="Nome da ação"
+            name="nome"
+            autoComplete="nome"
+            autoFocus
           />
-          <input
+          <TextField 
             placeholder="Descrição"
             value = {descricao}
             onChange = {e => setDescricao(e.target.value)}
-          />
-
-          <button type="submit">Cadastrar</button>
+            variant="standard"
+            margin="normal"
+            required
+            fullWidth
+            id="descricao"
+            label="Descrição"
+            name="descricao"
+            autoComplete="descricao"
+          /> <br/> <br/>
+          <Button
+            className="enviar"
+            type="submit"
+            fullWidth
+            variant="contained"
+            color="primary"
+          >Cadastrar
+          </Button>
         </form>
       </div>
-    </div>
+    </Container>
   )
 }

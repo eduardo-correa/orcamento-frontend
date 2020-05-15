@@ -3,6 +3,10 @@ import { useHistory } from 'react-router-dom';
 import api from '../../services/api';
 import './style.css';
 
+import Container from '@material-ui/core/Container';
+import TextField from '@material-ui/core/TextField';
+import Button from '@material-ui/core/Button';
+
 export default function Usuario() {
 
   const [perfil, setPerfil] = useState('');
@@ -44,42 +48,89 @@ export default function Usuario() {
   }
 
   return (
-    <div className="registro-container">
-      <div className="content">
-        <section>
-          <h1>Cadastro de Usuário</h1>
-          <p>Faça seu cadastro para ter acesso ao sistema de controle orçamentário da CGGOV.</p>
-        </section>
+    <Container component="main" maxWidth="xs">
+      <div className="paper">
+        <h1>Cadastro de Usuário</h1>
+        <p>Faça seu cadastro para ter acesso ao sistema de controle orçamentário da CGGOV.</p>
         <form onSubmit={handleUsuario}>
-          <input
+          <TextField
             placeholder="Perfil"
             value = {perfil}
             onChange = {e => setPerfil(e.target.value)}
+            variant="standard"
+            margin="normal"
+            required
+            fullWidth
+            id="perfil"
+            label="Perfil"
+            name="perfil"
+            autoComplete="perfil"
+            autoFocus
           />
-          <input
+          <TextField 
             placeholder="Matrícula"
             value = {matricula}
             onChange = {e => setMatricula(e.target.value)}
+            variant="standard"
+            margin="normal"
+            required
+            fullWidth
+            id="matricula"
+            label="Matrícula"
+            name="matricula"
+            autoComplete="matricula"
           />
-          <input
+          <TextField 
             placeholder="Nome"
             value = {nome}
             onChange = {e => setNome(e.target.value)}
+            variant="standard"
+            margin="normal"
+            required
+            fullWidth
+            id="nome"
+            label="Nome"
+            name="nome"
+            autoComplete="nome"
           />
-          <input
-            type="email" placeholder="E-mail"
+          <TextField 
+            placeholder="E-mail"
             value = {email}
             onChange = {e => setEmail(e.target.value)}
+            variant="standard"
+            margin="normal"
+            required
+            fullWidth
+            id="email"
+            label="E-mail"
+            name="email"
+            autoComplete="email"
+            type="email"
           />
-          <input
+          <TextField 
             placeholder="Senha"
             value = {senha}
             onChange = {e => setSenha(e.target.value)}
-          />
-
-          <button type="submit">Cadastrar</button>
+            variant="standard"
+            margin="normal"
+            required
+            fullWidth
+            id="senha"
+            label="Senha"
+            name="senha"
+            autoComplete="senha"
+            type="password"
+          /> <br/><br/>
+          <Button
+            className="enviar"
+            type="submit"
+            fullWidth
+            variant="contained"
+            color="primary"
+          >Cadastrar
+          </Button>
         </form>
       </div>
-    </div>
+    </Container>
   )
 }
