@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import api from '../../services/api';
+import Navegacao from '../../Components/Navegacao';
 import './style.css';
 
 import Container from '@material-ui/core/Container';
@@ -43,6 +44,7 @@ export default function Acao() {
 
   return (
     <Container component="main" maxWidth="xs">
+      <Navegacao />
       <div className="paper">
         <section>
           <h1>Cadastro de Ações da JT</h1>

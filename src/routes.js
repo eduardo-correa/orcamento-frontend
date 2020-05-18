@@ -2,6 +2,7 @@ import React from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
 import Login from './pages/Login';
+import Home from './pages/Home';
 import Usuario from './pages/Usuario';
 import UG from './pages/UG';
 import Acao from './pages/Acao';
@@ -17,6 +18,7 @@ export default function Routes() {
     <BrowserRouter>
       <Switch>
         <Route path="/" exact component={Login} />
+        <Route path="/home" exact component={Home} />
         <Route path="/usuario" component={Usuario} />
         <Route path="/ug" component={UG} />
         <Route path="/acao" component={Acao} />
