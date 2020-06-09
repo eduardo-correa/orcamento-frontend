@@ -8,7 +8,8 @@ export default function Copyright() {
       {'Copyright © '}
       <Link color="inherit"
       href="http://www.csjt.jus.br"
-      underline="hover" >
+      underline="hover"
+      target = "_blank" >
         CSJT - CGGOV
       </Link>{' '}
       {new Date().getFullYear()}

@@ -126,6 +126,7 @@ export default function Navegacao() {
           >
             <MenuIcon />
           </IconButton>
+          <img src={CsjtImg} alt="Logo" className={classes.imgLogo}/>
           <Typography component="h1" variant="h6" color="inherit" noWrap className={classes.title}>
             CGGOV Orçamento
           </Typography>
@@ -143,6 +144,9 @@ export default function Navegacao() {
       >
         <div className={classes.toolbarIcon}>
           <img src={CsjtImg} alt="Logo" className={classes.imgLogo}/>
+          <Typography component="h1" variant="h6" color="inherit" noWrap className={classes.title}>
+            Menu
+          </Typography>
           <IconButton onClick={handleDrawerClose}>
             <ChevronLeftIcon />
           </IconButton>
